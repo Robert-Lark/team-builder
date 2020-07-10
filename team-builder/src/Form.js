@@ -15,7 +15,7 @@ const Form = (props) => {
 
 	const addTeamMember = (event) => {
         event.preventDefault();
-        props.setNewTeamMember([...props.team, newTeamMember])
+        props.setNewTeamMember([...props.newTeamMember, newTeamMember])
 	};
 	return (
 		<div>
