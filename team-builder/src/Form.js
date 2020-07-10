@@ -3,18 +3,20 @@ import { useState } from "react";
 import "./App.css";
 
 const Form = (props) => {
-	const defaultState = { name: "", email: "", role: "" };
-	const { newTeamMember, setNewTeamMember } = useState(defaultState);
+	const defaultState = { name: "", email: "" };
+	const [newTeamMember, setNewTeamMember] = useState(defaultState);
+
 	const handleChange = (event) => {
 		setNewTeamMember({
 			...newTeamMember,
 			[event.target.name]: event.target.value,
 		});
 	};
-	const addTeamMember = (event) => {
-		event.preventDefault();
-	};
 
+	const addTeamMember = (event) => {
+        event.preventDefault();
+        props.setNewTeamMember([...props.team, newTeamMember])
+	};
 	return (
 		<div>
 			<form onSubmit={addTeamMember}>
@@ -49,3 +51,4 @@ const Form = (props) => {
 };
 
 export default Form;
+
