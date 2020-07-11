@@ -5,10 +5,10 @@ const TeamMembers = (props) => {
 		<div className="note-list">
 			{props.team.map((team, i) => (
 				<div key={i}>
-					<h2>{team.name}</h2>
-					<p>{team.email}</p>
-					<p>{team.role}</p>
-					<p>{team.gender}</p>
+					<h2>NAME: {team.name}</h2>
+					<p># of Henchmen: {team.email}</p>
+					<p>Arch-Enemy: {team.role}</p>
+					<p>Super-Power: {team.gender}</p>
 				</div>
 			))}
 		</div>

@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import "./App.css";
+import styled from "styled-components";
 
 const Form = (props) => {
 	const defaultState = { name: "", email: "" };
@@ -14,9 +15,10 @@ const Form = (props) => {
 	};
 
 	const addTeamMember = (event) => {
-        event.preventDefault();
-        props.setNewTeamMember([...props.newTeamMember, newTeamMember])
+		event.preventDefault();
+		props.setNewTeamMember([...props.newTeamMember, newTeamMember]);
 	};
+
 	return (
 		<div>
 			<form onSubmit={addTeamMember}>
@@ -30,25 +32,25 @@ const Form = (props) => {
 					onChange={handleChange}
 					name="email"
 					type="text"
-					placeholder="Email"
+					placeholder="# of Henchmen"
 				/>
 				<input
 					onChange={handleChange}
 					name="role"
 					type="text"
-					placeholder="Role"
+					placeholder="Arch-Enemy"
 				/>
+
 				<select onChange={handleChange} name="gender">
-					<option value="gender">Gender</option>
-					<option value="male">Male</option>
-					<option value="female">Female</option>
-					<option value="other">Other</option>
+					<option value="gender">Super-Power</option>
+					<option value="male">Elemental</option>
+					<option value="female">Mad-Scientist</option>
+					<option value="other">Half Man Half Animal</option>
 				</select>
-				<button type="submit">Add Team-member</button>
+				<button type="submit">Apply to the Guild</button>
 			</form>
 		</div>
 	);
 };
 
 export default Form;
-
